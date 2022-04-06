@@ -7,9 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
-        run: echjjo 'Hello from a github action'
+        run: echo 'Hello from a github action'
       - name: multiline script
         run: |
           node -v
           npm -v
+      - name: python command
+        run: |
+          import platform
+          print(platform.processor())
     
