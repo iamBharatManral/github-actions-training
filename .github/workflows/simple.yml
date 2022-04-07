@@ -3,13 +3,17 @@ name: a simple workflow
 on: push
 
 jobs:
-  hello-world:
+  node-strategy:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node_version: [6,7,8]
       fail-fast: true
     steps:
-     - name: hello
-       run: node -v
+    - name: setup node
+      uses: actions/setup-node@v3
+      with:
+        node-version: "${{ matrix.node_version }}"
+    - name: get node version
+      run: node -v
      
