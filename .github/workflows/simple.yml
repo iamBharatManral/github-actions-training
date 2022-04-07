@@ -1,29 +1,12 @@
-name: Shell commands
+name: a simple workflow
 
-on: [push]
+on: push
 
 jobs:
-  run-shell-command:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
-      - name: echo a string
-        run: echo 'Hello from a github action'
-      - name: multiline script
-        run: |
-          node -v
-          npm -v
-      - name: python command
-        run: |
-          import platform
-          print(platform.processor())
-        shell: python
-  
-  run-windows-commands:
-    runs-on: windows-latest
-    needs: ["run-shell-command"]
-    steps:
-      - name: Directory powershell
-        run: Get-Location
-      - name: Directory bash
-        run: pwd
-        shell: bash
+     - name: hello
+       id: hello
+       run: echo "Hello World"
+     
