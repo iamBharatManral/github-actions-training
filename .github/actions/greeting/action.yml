@@ -1,0 +1,15 @@
+name: Greeting action
+description: Prints a greeting
+author: Bharat Manral
+inputs:
+  who-to-greet:
+   description: Name of the greeted
+   required: true
+   default: Bharat
+outputs:
+  time:
+   description: Outputs the running time
+runs:
+  using: 'node12'
+  main: "index.js"
+

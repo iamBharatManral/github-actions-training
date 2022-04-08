@@ -1,0 +1,18 @@
+name: Created a action
+
+on : push
+
+jobs:
+  run-action:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2
+     - uses: ./.github/actions/greeting
+       id: greet
+       with:
+        who-to-greet: 'World'
+     - name: output
+       run: |
+         echo "${{ steps.greet.outputs.time }}"
+      
+         
