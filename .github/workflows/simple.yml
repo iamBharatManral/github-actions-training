@@ -8,10 +8,10 @@ env:
 jobs:
   node-strategy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node_version: [6,7,8]
-      fail-fast: true
+    # strategy:
+    #   matrix:
+    #     node_version: [6,7,8]
+    #   fail-fast: true
     steps:
     - name: setup node
       uses: actions/setup-node@v3
@@ -22,6 +22,9 @@ jobs:
       
     - name: Greeting
       run: |
-        echo $GREET
-        echo $BYE
+        echo $GITHUB_REPOSITORY
+        echo $GITHUB_ACTOR
+        echo $GITHUB_REF
+        echo $GITHUB_BRANCH
+        echo $GITHUB_SHA
      
