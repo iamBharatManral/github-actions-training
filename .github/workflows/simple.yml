@@ -2,6 +2,9 @@ name: a simple workflow
 
 on: push
 
+env:
+  GREET: "Hola!"
+  BYE: "Chao!"
 jobs:
   node-strategy:
     runs-on: ubuntu-latest
@@ -16,4 +19,9 @@ jobs:
         node-version: "${{ matrix.node_version }}"
     - name: get node version
       run: node -v
+      
+    - name: Greeting
+      run: |
+        echo $GREET
+        echo $BYE
      
