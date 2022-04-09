@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: "${{ matrix.node_version }}"
+    - uses: actions/checkout@v1
+    - run: ls -l
     - name: get node version
       run: node -v
       
