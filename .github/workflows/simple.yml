@@ -8,4 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
      - name: echo command
-       run: echo $CODEOWNERS
+       run: echo {{ github.sha}}
