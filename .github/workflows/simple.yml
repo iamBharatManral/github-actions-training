@@ -1,10 +1,11 @@
 name: A simple github action
 
 on: [push]
-
+env:
+  CODEOWNERS: "bharat"
 jobs:
   run-command:
     runs-on: ubuntu-latest
     steps:
      - name: echo command
-       run: echo $GITHUB_REPOSITORY
+       run: echo $CODEOWNERS
