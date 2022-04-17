@@ -1,32 +1,9 @@
-name: a simple workflow
+name: A simple github action
 
-on: push
+on: [push]
 
-env:
-  GREET: "Hola!"
-  BYE: "Chao!"
 jobs:
-  node-strategy:
+  run-command:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node_version: [6]
-      fail-fast: true
     steps:
-    - name: setup node
-      uses: actions/setup-node@v3
-      with:
-        node-version: "${{ matrix.node_version }}"
-    - uses: actions/checkout@v1
-    - run: ls -l
-    - name: get node version
-      run: node -v
-      
-    - name: Greeting
-      run: |
-        echo $GITHUB_REPOSITORY
-        echo $GITHUB_ACTOR
-        echo $GITHUB_REF
-        echo $GITHUB_SHA
-        echo "${{ runner.arch }}"
-     
+     - run: echo "hello"
