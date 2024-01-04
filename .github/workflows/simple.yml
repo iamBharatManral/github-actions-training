@@ -1,11 +1,13 @@
-name: A simple github action
-
+name: Shell commands
 on: [push]
-env:
-  CODEOWNERS: "bharat"
+
 jobs:
-  run-command:
-    runs-on: ubuntu-latest
-    steps:
-     - name: echo command
-       run: echo {{ github.sha}}
+ run-shell-commands:
+   runs-on: ubuntu-latest
+   steps:
+    - name: echo a string
+      run: echo 'hello world'
+    - name: run a scrip
+      run: |
+        node -v
+        npm -v
