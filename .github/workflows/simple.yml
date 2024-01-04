@@ -11,3 +11,12 @@ jobs:
       run: |
         node -v
         npm -v
+
+    - name: display a greeting
+      id: greet
+      uses: actions/hello-world-javascript-action@v1
+      with:
+       who-to-greet: Bharat
+
+    - name: print action output
+      run: echo "${{ steps.greet.outputs.time }}"
