@@ -1,0 +1,12 @@
+name: Github actions
+
+on: [push]
+
+jobs:
+  github-training:
+   runs-on: ubuntu-latest
+   steps:
+    - name: running node command
+      run: |
+        console.log('Hello, World')
+      shell: node
