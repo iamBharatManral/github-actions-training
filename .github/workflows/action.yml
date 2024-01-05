@@ -8,4 +8,4 @@ jobs:
    steps:
     - name: running node command
       run: |
-        pws && ls
+        pwd && ls
