@@ -6,6 +6,8 @@ jobs:
   github-training:
    runs-on: ubuntu-latest
    steps:
-    - name: running node command
-      run: |
-        pwd && ls
+    - name: checkout the repo
+      uses: actions/checkout@v4
+
+    - name: run node app
+      run: node app.js
